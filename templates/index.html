@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #e63946;
+        }
+        .endpoint {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        .example {
+            background-color: #d1e7dd;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .response {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0d6efd;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Downloader API</h1>
+        <p>Welcome to the YouTube Downloader API! This API allows you to extract information and download links from YouTube videos.</p>
+        
+        <h2>API Endpoint</h2>
+        <div class="endpoint">/download?url=[YOUTUBE_URL]</div>
+        
+        <h2>Example Usage</h2>
+        <div class="example">
+            <p>To get information about a YouTube video, use the following URL format:</p>
+            <div class="endpoint">{{ url_for('download_video', _external=True) }}?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ</div>
+        </div>
+        
+        <h2>Response Format</h2>
+        <p>The API returns a JSON response with the following structure:</p>
+        <div class="response">
+            <pre>{
+  "title": "Video Title",
+  "channel": "Channel Name",
+  "duration": 212,
+  "thumbnail": "https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg",
+  "description": "Video description...",
+  "upload_date": "20230101",
+  "view_count": 1234567,
+  "like_count": 12345,
+  "formats": [
+    {
+      "format_id": "22",
+      "format_note": "hd720",
+      "resolution": "1280x720",
+      "extension": "mp4",
+      "filesize_approx": 45678901,
+      "url": "https://direct-url-to-video.mp4",
+      "vcodec": "avc1.64001F",
+      "acodec": "mp4a.40.2",
+      "fps": 30
+    },
+    ...
+  ]
+}</pre>
+        </div>
+        
+        <h2>How to Use</h2>
+        <ol>
+            <li>Find the YouTube video you want to download</li>
+            <li>Copy the video URL</li>
+            <li>Replace [YOUTUBE_URL] in the endpoint with your video URL</li>
+            <li>Access the URL in your browser or application</li>
+            <li>Use the direct URL from the format you prefer to download the video</li>
+        </ol>
+    </div>
+</body>
+</html>
